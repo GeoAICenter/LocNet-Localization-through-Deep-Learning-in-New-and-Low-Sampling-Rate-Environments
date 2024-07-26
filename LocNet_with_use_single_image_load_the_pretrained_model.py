@@ -19,6 +19,13 @@ if __name__ == '__main__':
         required=True,
         help="Path to the test environment buildings with known sampling pixel."
     )
+    ap.add_argument(
+        "-o",
+        "--trained_model_location",
+        dest="TRAINED_MODEL_LOCATION",
+        required=True,
+        help="Path to the trained LocNet model."
+    )
     args = vars(ap.parse_args())
     sampling_data = read_image(args["SAMPLING_IMAGE"], ImageReadMode.GRAY).float() / 255.0
     environment_building = read_image(args["ENVIRONMENT_BUILDINGS"], ImageReadMode.GRAY) / 255.0
@@ -34,7 +41,7 @@ if __name__ == '__main__':
         outpath=None,
     )
     model = model.to(device)
-    model.load_state_dict(torch.load('Pretrained_LocNet.pt', weights_only=True))
+    model.load_state_dict(torch.load(args["TRAINED_MODEL_LOCATION"], weights_only=True))
     data_input = data_input.to(device)
     output = model.forward(data_input).squeeze().detach().cpu()
     transmitter_prediction = torch.argmax(torch.flatten(output))
