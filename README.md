@@ -1,5 +1,5 @@
 # LocNet-Localization-through-Deep-Learning-in-New-and-Low-Sampling-Rate-Environments
-This repository contains the code for the paper ["LocNet Localization Through Deep Learning in New and Low Sampling Rate Environments"](https://drive.google.com/file/d/1l3n6mgauMbAxEtiDcCP4a1yQhEpAWYIv/view?usp=sharing)
+This repository contains the code for the paper ["LocNet Localization Through Deep Learning in New and Low Sampling Rate Environments"](https://drive.google.com/file/d/1l3n6mgauMbAxEtiDcCP4a1yQhEpAWYIv/view?usp=sharing) (PAKDD-2024 Oral)
 ## Files
 1. The <b>README.md</b> file contains the link to the dataset that was used to trained our LocNet model.
 
